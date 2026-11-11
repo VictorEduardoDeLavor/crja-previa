@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CRJA Consultoria · Recrutamento & Seleção em São Paulo (prévia)</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Consultoria e assessoria em RH há mais de 25 anos. Vagas abertas e recrutamento e seleção para empresas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#0f7c86; --teal-d:#0a5d65; --teal-l:#e6f4f5;
+    --ink:#14212b; --muted:#5b6b76; --line:#e3e9ed; --bg:#f6f9fa; --white:#fff;
+    --accent:#f2a33a;
+    --r:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+
+  /* faixa de prévia */
+  .preview-bar{background:var(--ink);color:#cfe3e6;font-size:13px;text-align:center;padding:8px 16px}
+  .preview-bar b{color:#fff}
+
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:-.3px}
+  .logo-mark{width:40px;height:40px;border-radius:10px;background:var(--teal);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:800;letter-spacing:.5px}
+  .logo small{display:block;font-size:11px;font-weight:500;color:var(--muted);letter-spacing:0}
+  nav ul{display:flex;gap:28px;list-style:none;font-weight:500;font-size:15px}
+  nav ul a{color:var(--muted);transition:color .2s}
+  nav ul a:hover{color:var(--teal)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;font-size:15px;border:0;cursor:pointer;transition:transform .15s,background .2s,box-shadow .2s;font-family:inherit}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-primary{background:var(--teal);color:#fff;box-shadow:0 6px 18px -6px rgba(15,124,134,.6)}
+  .btn-primary:hover{background:var(--teal-d)}
+  .btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
+  .menu-toggle{display:none;background:none;border:0;font-size:26px;cursor:pointer;color:var(--ink)}
+
+  /* hero */
+  .hero{background:radial-gradient(1200px 500px at 85% -10%,#cdeef0 0%,transparent 60%),var(--bg);padding:84px 0 72px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;color:var(--teal)}
+  .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.18)}
+  h1{font-size:clamp(34px,5vw,56px);line-height:1.08;letter-spacing:-1.5px;margin:20px 0 18px;font-weight:800}
+  h1 em{font-style:normal;color:var(--teal)}
+  .lead{font-size:18px;color:var(--muted);max-width:540px}
+  .search{margin-top:32px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:8px;display:flex;gap:8px;box-shadow:0 20px 40px -24px rgba(20,33,43,.25);max-width:560px}
+  .search input{flex:1;border:0;outline:0;font:inherit;font-size:16px;padding:10px 14px;background:transparent}
+  .hero-ctas{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;font-size:14px;color:var(--muted);align-items:center}
+  .hero-card{background:#fff;border-radius:24px;padding:28px;border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(20,33,43,.3)}
+  .hero-card h3{font-size:15px;color:var(--muted);font-weight:600;margin-bottom:16px}
+  .mini-job{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-top:1px solid var(--line)}
+  .mini-job:first-of-type{border-top:0}
+  .mini-job b{display:block;font-size:15px}
+  .mini-job span{font-size:13px;color:var(--muted)}
+  .mini-job .sal{font-weight:700;color:var(--teal);font-size:15px;white-space:nowrap}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px}
+  .stat b{font-size:28px;letter-spacing:-.5px;display:block}
+  .stat span{font-size:14px;color:var(--muted)}
+
+  section{padding:88px 0}
+  .sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:36px;flex-wrap:wrap}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal)}
+  h2{font-size:clamp(28px,3.6vw,40px);letter-spacing:-1px;line-height:1.15;margin-top:8px}
+  .sec-head p{color:var(--muted);max-width:460px}
+
+  /* vagas */
+  .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+  .chip{padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:#fff;font:inherit;font-size:14px;font-weight:500;cursor:pointer;color:var(--muted);transition:all .2s}
+  .chip.active,.chip:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
+  select.chip{appearance:none;padding-right:34px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235b6b76' stroke-width='2' fill='none'/%3E%3C/svg%3E") no-repeat right 14px center}
+  select.chip:hover{color:var(--ink);background-color:#fff}
+  .jobs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .job{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:14px;transition:border-color .2s,box-shadow .2s,transform .2s}
+  .job:hover{border-color:#bfe0e3;box-shadow:0 18px 40px -24px rgba(15,124,134,.45);transform:translateY(-2px)}
+  .job-top{display:flex;justify-content:space-between;gap:10px;align-items:start}
+  .tag{font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--teal-l);color:var(--teal-d);white-space:nowrap}
+  .tag.hot{background:#fff4e2;color:#a8620a}
+  .job h3{font-size:18px;line-height:1.3;letter-spacing:-.2px}
+  .job .salary{font-size:22px;font-weight:800;letter-spacing:-.5px}
+  .job .salary small{font-size:13px;font-weight:500;color:var(--muted)}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:13.5px;color:var(--muted)}
+  .meta span{display:inline-flex;gap:6px;align-items:center}
+  .benefits{display:flex;flex-wrap:wrap;gap:6px}
+  .benefits i{font-style:normal;font-size:12px;padding:3px 9px;border:1px solid var(--line);border-radius:6px;color:var(--muted)}
+  .job .btn{margin-top:auto;justify-content:center}
+  .empty{display:none;text-align:center;color:var(--muted);padding:40px;border:1px dashed var(--line);border-radius:var(--r)}
+  .note{margin-top:22px;font-size:14px;color:var(--muted);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .note b{color:var(--ink)}
+
+  /* empresas */
+  .companies{background:var(--ink);color:#e8eef1}
+  .companies h2{color:#fff}
+  .companies .sec-head p{color:#9fb2bc}
+  .companies .kicker{color:#5fd0d9}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .step{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--r);padding:22px}
+  .step .n{font-size:13px;font-weight:700;color:#5fd0d9}
+  .step h4{font-size:16px;margin:8px 0 6px;color:#fff}
+  .step p{font-size:14px;color:#9fb2bc}
+  .perks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+  .perk{display:flex;gap:14px;align-items:start;padding:18px;border-radius:var(--r);background:rgba(95,208,217,.08)}
+  .perk .ic{width:36px;height:36px;border-radius:10px;background:#5fd0d9;color:var(--ink);display:grid;place-items:center;font-weight:800;flex-shrink:0}
+  .perk b{color:#fff;display:block}
+  .perk span{font-size:14px;color:#9fb2bc}
+  .cta-box{margin-top:48px;background:linear-gradient(120deg,var(--teal),#13a0ab);border-radius:24px;padding:40px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .cta-box h3{font-size:26px;color:#fff;letter-spacing:-.5px}
+  .cta-box p{color:#d7f3f5}
+  .cta-box .btn{background:#fff;color:var(--teal-d)}
+
+  /* areas */
+  .areas{display:flex;flex-wrap:wrap;gap:10px}
+  .areas span{padding:10px 18px;border-radius:999px;background:var(--bg);border:1px solid var(--line);font-weight:500;font-size:15px}
+
+  /* sobre */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .about-grid p{color:var(--muted);margin-top:16px;font-size:17px}
+  .quote{background:var(--bg);border-radius:24px;padding:36px;border:1px solid var(--line);position:relative}
+  .quote::before{content:"“";position:absolute;top:-10px;left:28px;font-size:90px;color:var(--teal);line-height:1;font-weight:800}
+  .quote p{font-size:19px;color:var(--ink);font-weight:500;margin-top:20px}
+  .quote .who{margin-top:20px;font-size:14px;color:var(--muted)}
+
+  /* insta */
+  .insta{background:var(--bg)}
+  .insta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .post{aspect-ratio:1;border-radius:var(--r);background:linear-gradient(135deg,var(--teal),#13a0ab);color:#fff;padding:20px;display:flex;flex-direction:column;justify-content:space-between;font-weight:700;font-size:17px;line-height:1.3;transition:transform .2s}
+  .post:nth-child(2){background:linear-gradient(135deg,var(--ink),#2b4352)}
+  .post:nth-child(3){background:linear-gradient(135deg,#f2a33a,#e07f1f)}
+  .post:nth-child(4){background:linear-gradient(135deg,#2b4352,var(--teal))}
+  .post:hover{transform:scale(1.02)}
+  .post small{font-size:12px;font-weight:500;opacity:.8}
+
+  /* contato */
+  .contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .contact{border:1px solid var(--line);border-radius:var(--r);padding:22px;transition:border-color .2s}
+  .contact:hover{border-color:var(--teal)}
+  .contact small{color:var(--muted);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1px}
+  .contact b{display:block;margin-top:6px;font-size:16px}
+
+  footer{border-top:1px solid var(--line);padding:28px 0;font-size:14px;color:var(--muted)}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  .wa{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.7);z-index:60}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:960px){
+    .hero-grid,.about-grid{grid-template-columns:1fr}
+    .jobs,.perks{grid-template-columns:1fr 1fr}
+    .steps,.insta-grid,.contact-grid,.stats{grid-template-columns:1fr 1fr}
+    nav ul{display:none}
+    nav ul.open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:#fff;padding:20px 24px;border-bottom:1px solid var(--line);gap:16px}
+    .menu-toggle{display:block}
+    .nav .btn-primary{display:none}
+  }
+  @media (max-width:600px){
+    .jobs,.perks,.steps{grid-template-columns:1fr}
+    section{padding:64px 0}
+    .search{flex-direction:column}
+    .cta-box{padding:28px}
+  }
+</style>
+</head>
+<body>
+
+<div class="preview-bar"><b>Prévia de redesenho</b> · proposta não oficial preparada por Victor Eduardo dos Santos para a CRJA Consultoria</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo"><div class="logo-mark">CRJA</div><div>CRJA Consultoria<small>Consultoria e Assessoria em RH</small></div></a>
+    <nav>
+      <ul id="menu">
+        <li><a href="#vagas">Vagas</a></li>
+        <li><a href="#empresas">Para empresas</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <a href="#empresas" class="btn btn-primary">Preciso contratar</a>
+    <button class="menu-toggle" aria-label="Abrir menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow"><span class="dot"></span><span id="countOpen">10</span> vagas abertas agora</span>
+        <h1>A arte de <em>administrar pessoas</em>, há mais de 25 anos.</h1>
+        <p class="lead">Recrutamento e seleção em todos os níveis, do operacional à média gerência, com atuação em todo o Brasil. Para quem procura emprego e para quem precisa contratar.</p>
+        <form class="search" onsubmit="event.preventDefault();document.getElementById('vagas').scrollIntoView();">
+          <input id="heroSearch" type="text" placeholder="Que vaga você procura? Ex.: comercial, financeiro…" aria-label="Buscar vaga">
+          <button class="btn btn-primary" type="submit">Buscar vagas</button>
+        </form>
+        <div class="hero-ctas">✓ Não cobramos nenhuma taxa dos candidatos</div>
+      </div>
+      <div class="hero-card reveal">
+        <h3>Vagas em destaque</h3>
+        <div id="featured"></div>
+        <a href="#vagas" class="btn btn-ghost" style="width:100%;justify-content:center;margin-top:16px">Ver todas as vagas →</a>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat reveal"><b>+25 anos</b><span>de mercado</span></div>
+      <div class="stat reveal"><b>Brasil todo</b><span>atuação em todos os estados</span></div>
+      <div class="stat reveal"><b>90 dias</b><span>de garantia com reposição imediata</span></div>
+      <div class="stat reveal"><b>100%</b><span>dos candidatos com referência</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="vagas">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="kicker">Para candidatos</div><h2>Vagas em aberto</h2></div>
+      <p>Encontre a vaga certa e candidate-se em um clique. O assunto e o texto do e-mail já vão preenchidos com a vaga escolhida.</p>
+    </div>
+    <div class="filters">
+      <button class="chip active" data-area="todas">Todas</button>
+      <button class="chip" data-area="Comercial">Comercial</button>
+      <button class="chip" data-area="Comex">Comércio exterior</button>
+      <button class="chip" data-area="Administrativo">Administrativo e financeiro</button>
+      <button class="chip" data-area="Operações">Operações</button>
+      <select class="chip" id="salFilter" aria-label="Faixa salarial">
+        <option value="0">Qualquer salário</option>
+        <option value="4000">A partir de R$ 4.000</option>
+        <option value="7000">A partir de R$ 7.000</option>
+      </select>
+    </div>
+    <div class="jobs" id="jobs"></div>
+    <div class="empty" id="empty">Nenhuma vaga com esse filtro. Envie seu currículo mesmo assim, ele fica no nosso banco de talentos.</div>
+    <div class="note">📄 Envie o currículo <b>em PDF</b>. Não encontrou sua vaga? <a href="mailto:eliane.araujo@crja.com.br?subject=Banco%20de%20talentos%20-%20curr%C3%ADculo" style="color:var(--teal);font-weight:600">Cadastre-se no banco de talentos →</a></div>
+  </div>
+</section>
+
+<section class="companies" id="empresas">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="kicker">Para empresas</div><h2>Do perfil da vaga à contratação,<br>com acompanhamento em cada etapa.</h2></div>
+      <p>Seleção de efetivos em todos os níveis (operacional, técnico, especialista e média gerência), com entrevistas, dinâmicas, testes situacionais e questionários pré-seletivos.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">01</div><h4>Levantamento do perfil</h4><p>Entendemos a necessidade e definimos o perfil ideal.</p></div>
+      <div class="step reveal"><div class="n">02</div><h4>Divulgação</h4><p>Internet, redes sociais e parceiros.</p></div>
+      <div class="step reveal"><div class="n">03</div><h4>Captação</h4><p>Banco de dados próprio e outras ferramentas.</p></div>
+      <div class="step reveal"><div class="n">04</div><h4>Pré-seleção</h4><p>Questionários classificatórios.</p></div>
+      <div class="step reveal"><div class="n">05</div><h4>Entrevistas</h4><p>Com os candidatos pré-aprovados.</p></div>
+      <div class="step reveal"><div class="n">06</div><h4>Referências</h4><p>De 2 a 3 referências por candidato.</p></div>
+      <div class="step reveal"><div class="n">07</div><h4>Laudo de avaliação</h4><p>Avaliação pessoal de cada finalista.</p></div>
+      <div class="step reveal"><div class="n">08</div><h4>Entrevista com o cliente</h4><p>Agendamento e acompanhamento até a contratação.</p></div>
+    </div>
+    <div class="perks">
+      <div class="perk reveal"><div class="ic">$</div><div><b>A melhor taxa do mercado</b><span>Proposta sob medida para a sua vaga.</span></div></div>
+      <div class="perk reveal"><div class="ic">90</div><div><b>Garantia de 90 dias</b><span>Reposição imediata do profissional.</span></div></div>
+      <div class="perk reveal"><div class="ic">⚡</div><div><b>Seleção em tempo ágil</b><span>Com todo o suporte admissional.</span></div></div>
+    </div>
+    <div class="cta-box reveal">
+      <div><h3>Tem uma vaga para preencher?</h3><p>Conte o perfil que você procura e receba uma proposta.</p></div>
+      <a class="btn" href="https://api.whatsapp.com/send?phone=5511940131700&text=Ol%C3%A1!%20Gostaria%20de%20uma%20proposta%20de%20recrutamento%20e%20sele%C3%A7%C3%A3o." target="_blank" rel="noopener">Pedir proposta pelo WhatsApp →</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><div><div class="kicker">Áreas de atuação</div><h2>Recrutamos para 12 segmentos</h2></div></div>
+    <div class="areas">
+      <span>TI & Telecomunicações</span><span>Comunicação & Entretenimento</span><span>Marketing & Comunicação</span><span>Indústria & Comércio</span><span>Serviços Financeiros</span><span>Arquitetura</span><span>Design & Engenharia</span><span>Estética & Beleza</span><span>Energia</span><span>Recursos & Infraestrutura</span><span>Prestação de Serviço</span><span>Transportes & Turismo</span>
+    </div>
+  </div>
+</section>
+
+<section id="sobre" style="padding-top:0">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <div class="kicker">Sobre a CRJA</div>
+      <h2>Mais de 25 anos ajudando empresas a escolher bem.</h2>
+      <p>Até 2010 a CRJA atuava com sistemas para RH. Com a demanda dos clientes, criou uma área dedicada a processos seletivos, e hoje atende empresas em todos os estados do Brasil com serviços personalizados.</p>
+      <p>Nossa triagem e avaliação dão tranquilidade na etapa final da contratação.</p>
+    </div>
+    <div class="quote reveal">
+      <p>Nosso maior patrimônio são nossos clientes.</p>
+      <div class="who"><b>Carlos R. J. Araújo</b> · Proprietário</div>
+    </div>
+  </div>
+</section>
+
+<section class="insta">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="kicker">@crjaconsultoria</div><h2>Acompanhe as vagas no Instagram</h2></div>
+      <a class="btn btn-ghost" href="https://www.instagram.com/crjaconsultoria" target="_blank" rel="noopener">Seguir no Instagram →</a>
+    </div>
+    <div class="insta-grid">
+      <a class="post reveal" href="https://www.instagram.com/crjaconsultoria" target="_blank" rel="noopener"><small>Vaga nova</small>Supervisor de Atendimento Comercial</a>
+      <a class="post reveal" href="https://www.instagram.com/crjaconsultoria" target="_blank" rel="noopener"><small>Dica de carreira</small>Como montar um currículo que passa na triagem</a>
+      <a class="post reveal" href="https://www.instagram.com/crjaconsultoria" target="_blank" rel="noopener"><small>Vaga nova</small>Coord. Comércio Exterior & Customer Service</a>
+      <a class="post reveal" href="https://www.instagram.com/crjaconsultoria" target="_blank" rel="noopener"><small>Para empresas</small>Garantia de 90 dias: como funciona</a>
+    </div>
+    <p class="note">Na versão final, esta área mostra automaticamente os últimos posts do perfil.</p>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="wrap">
+    <div class="sec-head"><div><div class="kicker">Contato</div><h2>Fale com a CRJA</h2></div><p>Estamos no ZN Coworking, Alto de Santana, São Paulo.</p></div>
+    <div class="contact-grid">
+      <a class="contact" href="https://api.whatsapp.com/send?phone=5511940131700" target="_blank" rel="noopener"><small>WhatsApp</small><b>(11) 94013-1700</b></a>
+      <a class="contact" href="tel:+551129593399"><small>Telefone</small><b>(11) 2959-3399</b></a>
+      <a class="contact" href="mailto:comercial@crja.com.br"><small>E-mail</small><b>comercial@crja.com.br</b></a>
+      <a class="contact" href="https://maps.google.com/?q=Rua+Pedro+Doll+555+Santana+Sao+Paulo" target="_blank" rel="noopener"><small>Endereço</small><b>Rua Pedro Doll, 555 · Santana</b></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 CRJA Consultoria · Consultoria e Assessoria em RH</span>
+    <span><a href="https://www.instagram.com/crjaconsultoria" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.linkedin.com/company/crja-consultoria" target="_blank" rel="noopener">LinkedIn</a></span>
+  </div>
+</footer>
+
+<a class="wa" href="https://api.whatsapp.com/send?phone=5511940131700" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>
+</a>
+
+<script>
+const VAGAS = [
+  {t:"Supervisor de Atendimento Comercial (SAC)", s:7000, b:["VT","VR","VA","AM","AO"], l:"Parque Residencial da Lapa", e:"3 anos", f:"Superior", a:"Comercial", hot:true},
+  {t:"Coord. Comércio Exterior & Customer Service América do Sul", s:14000, b:["VT","VA","AM","PLR"], l:"Jardim São Luiz · ZS", e:"6 anos", f:"Superior", a:"Comex", hot:true},
+  {t:"Executivo de Negócios e Relacionamento", s:5000, b:["VT","VR","VA","AM","AO"], l:"Parque Residencial da Lapa", e:"3 anos", f:"Superior", a:"Comercial"},
+  {t:"Encarregado de Corte · Confecção", s:4300, b:["VT","VR","AM"], l:"Brás", e:"3 anos", f:"Superior", a:"Operações"},
+  {t:"Analista de Atendimento Comercial / COMEX", s:4000, b:["VT","VR","VA","AM","AO"], l:"Parque Residencial da Lapa", e:"2 anos", f:"Superior", a:"Comex"},
+  {t:"Analista Financeiro", s:3500, b:["VT","VR","VA","AM","AO"], l:"Parque Residencial da Lapa", e:"2 anos", f:"Superior", a:"Administrativo"},
+  {t:"Executivo Comercial", s:3000, b:["Comissão","Cesta básica","PLR"], l:"Rio Pequeno · ZO", e:"3 anos", f:"Superior", a:"Comercial"},
+  {t:"Importação / Agenciamento de Carga Internacional", s:3000, b:["VT","VA","VR","AM","AO"], l:"Parque Residencial da Lapa", e:"2 anos", f:"Superior", a:"Comex"},
+  {t:"Vendedor E-commerce", s:3000, b:["VT","Cesta básica","Comissão"], l:"Santa Ifigênia", e:"2 anos", f:"Ensino Médio", a:"Comercial"},
+  {t:"Assistente Contábil", s:2800, b:["VT","VR","AM"], l:"Santana", e:"2 anos", f:"Superior", a:"Administrativo"},
+];
+const brl = v => v.toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
+const mail = v => {
+  const sub = encodeURIComponent(`Currículo - ${v.t}`);
+  const body = encodeURIComponent(`Olá, equipe CRJA!\n\nTenho interesse na vaga: ${v.t} (${v.l}).\nSegue meu currículo em PDF em anexo.\n\nNome:\nTelefone:\n`);
+  return `mailto:eliane.araujo@crja.com.br?subject=${sub}&body=${body}`;
+};
+let area = 'todas';
+function render(){
+  const q = document.getElementById('heroSearch').value.trim().toLowerCase();
+  const min = +document.getElementById('salFilter').value;
+  const list = VAGAS.filter(v => (area==='todas'||v.a===area) && v.s>=min && (!q || (v.t+' '+v.l+' '+v.a).toLowerCase().includes(q)));
+  document.getElementById('jobs').innerHTML = list.map(v=>`
+    <article class="job">
+      <div class="job-top"><span class="tag ${v.hot?'hot':''}">${v.hot?'Destaque':v.a}</span><span class="tag" style="background:#f1f4f6;color:#5b6b76">${v.f}</span></div>
+      <h3>${v.t}</h3>
+      <div class="salary">${brl(v.s)} <small>/ mês</small></div>
+      <div class="meta"><span>📍 ${v.l}</span><span>⏱ ${v.e} de experiência</span></div>
+      <div class="benefits">${v.b.map(x=>`<i>${x}</i>`).join('')}</div>
+      <a class="btn btn-primary" href="${mail(v)}">Quero me candidatar</a>
+    </article>`).join('');
+  document.getElementById('empty').style.display = list.length ? 'none' : 'block';
+}
+document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active'); area=b.dataset.area; render();
+}));
+document.getElementById('salFilter').addEventListener('change',render);
+document.getElementById('heroSearch').addEventListener('input',render);
+document.getElementById('countOpen').textContent = VAGAS.length;
+document.getElementById('featured').innerHTML = VAGAS.slice(0,3).map(v=>`
+  <a class="mini-job" href="${mail(v)}"><div><b>${v.t}</b><span>${v.l}</span></div><div class="sal">${brl(v.s)}</div></a>`).join('');
+render();
+const io = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
